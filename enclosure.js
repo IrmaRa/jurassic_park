@@ -5,6 +5,10 @@ var Enclosure = function() {
 Enclosure.prototype = {
   count: function() {
     return this.dinosaurs.length;
+  },
+
+  addDinosaur: function(dinosaur) {
+    this.dinosaurs.push(dinosaur);
   }
 }
 

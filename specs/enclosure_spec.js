@@ -20,8 +20,13 @@ describe('Enclosure', function() {
   it('should start empty', function() {
     assert.strictEqual(0, enclosure.count());
   });
+
+  it('should be able to add dinosaur', function() {
+    enclosure.addDinosaur(dinosaur1);
+    assert.strictEqual(1, enclosure.count());
+
+  })
 });
 
-// should be able to add dinosaur
 // should be able to remove all dinosaurs of a particular type
 // should get all the dinosaurs with an offspring count of more than 2
