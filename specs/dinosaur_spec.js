@@ -17,5 +17,4 @@ describe('Dinosaur', function() {
     assert.strictEqual(3, dinosaur.offspring);
   });
 
-
 });

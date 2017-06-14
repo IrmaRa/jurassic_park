@@ -15,6 +15,7 @@ describe('Enclosure', function() {
     dinosaur1 = new Dinosaur({type: 'Tyrannosaurus', offspring: 3});
     dinosaur2 = new Dinosaur({type: 'Velociraptor', offspring: 2});
     dinosaur3 = new Dinosaur({type: 'Triceratops', offspring: 5});
+    dinosaur4 = new Dinosaur({type: 'Tyrannosaurus', offspring: 5});
   });
 
   it('should start empty', function() {
@@ -24,9 +25,22 @@ describe('Enclosure', function() {
   it('should be able to add dinosaur', function() {
     enclosure.addDinosaur(dinosaur1);
     assert.strictEqual(1, enclosure.count());
+  });
 
-  })
+  it('should be able to remove all dinosaurs of a particular type', function() {
+    enclosure.addDinosaur(dinosaur1);
+    enclosure.addDinosaur(dinosaur4);
+    enclosure.addDinosaur(dinosaur3);
+    enclosure.removeByType('Tyrannosaurus');
+    assert.strictEqual(1, enclosure.count());
+  });
+
+  it('should get dinosaurs if offspring more than 2', function() {
+    enclosure.addDinosaur(dinosaur1);
+    enclosure.addDinosaur(dinosaur4);
+    enclosure.addDinosaur(dinosaur3);
+    enclosure.addDinosaur(dinosaur2);
+    assert.strictEqual(3, enclosure.countOffspring().length);
+  });
+
 });
-
-// should be able to remove all dinosaurs of a particular type
-// should get all the dinosaurs with an offspring count of more than 2

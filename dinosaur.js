@@ -4,5 +4,4 @@ var Dinosaur = function(options) {
 }
 
 
-
 module.exports = Dinosaur;
